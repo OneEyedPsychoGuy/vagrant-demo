@@ -9,8 +9,6 @@ sudo apt-get -y install php-common
 sudo apt-get -y install php-all-dev
 sudo apt-get -y install php-mcrypt
 sudo apt-get -y install php-zip
-sudo apt-get -y install mysql-server
-sudo apt-get -y install php-mysql
 
 sudo a2enmod expires
 sudo a2enmod headers
@@ -22,5 +20,8 @@ sudo service apache2 restart
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
 
+sudo apt-get -y install mysql-server
 sudo mysqladmin -uroot -proot create scotchbox
+sudo apt-get install -y install php-mysql
+
 sudo service apache2 restart
